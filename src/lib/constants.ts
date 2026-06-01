@@ -299,10 +299,10 @@ export const TECHNOLOGY = {
     },
     {
       id: "estrutura-campo",
-      title: "Estrutura Própria de Campo",
+      title: "Estrutura Operacional Própria",
       description:
-        "Equipe equipada para atender obras, loteamentos, georreferenciamento e aerolevantamentos em toda a região.",
-      image: "/images/equipment/06-veiculo-operacional.png",
+        "Equipe técnica especializada, veículos próprios, equipamentos RTK, drones e estrutura completa para execução de levantamentos, georreferenciamento, aerolevantamentos e projetos em toda a região.",
+      image: "/images/equipment/06-estrutura-operacional.jpg",
       icon: "Truck",
     },
   ],
