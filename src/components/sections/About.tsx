@@ -1,9 +1,26 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, History } from "lucide-react";
+import { Target, Eye, Heart, History, Building2 } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { ABOUT } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
+
+const institutionalPhotos = [
+  {
+    src: IMAGES.about.equipe,
+    title: "Nossa Equipe",
+    description:
+      "Profissionais qualificados em topografia, geodésia e engenharia, prontos para atender projetos em todo o Brasil.",
+  },
+  {
+    src: IMAGES.about.escritorio,
+    title: "Nosso Escritório",
+    description:
+      "Estrutura completa em Parauapebas-PA, com tecnologia de ponta para levantamentos, processamento e projetos.",
+  },
+];
 
 const cards = [
   {
@@ -16,13 +33,13 @@ const cards = [
     icon: Target,
     title: "Missão",
     content: ABOUT.mission,
-    accent: "from-cyan-dark to-cyan",
+    accent: "from-brand-green-dark to-brand-green",
   },
   {
     icon: Eye,
     title: "Visão",
     content: ABOUT.vision,
-    accent: "from-petrol to-cyan-dark",
+    accent: "from-petrol to-brand-green-dark",
   },
 ];
 
@@ -35,6 +52,63 @@ export function About() {
           title="Excelência em cada coordenada"
           description="Conheça a SV Topografia & Projetos — referência em soluções geoespaciais e de engenharia."
         />
+
+        {/* Bloco institucional com fotos reais */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {institutionalPhotos.map((photo, i) => (
+            <motion.div
+              key={photo.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group relative rounded-2xl overflow-hidden border border-gray-100 shadow-lg shadow-navy-dark/5"
+            >
+              <div className="relative aspect-[16/10]">
+                <Image
+                  src={photo.src}
+                  alt={photo.title}
+                  fill
+                  loading="lazy"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-navy-dark/20 to-transparent" />
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {photo.title}
+                </h3>
+                <p className="text-sm text-white/75 leading-relaxed">
+                  {photo.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-start gap-4 rounded-2xl bg-gray-50 border border-gray-100 p-6 mb-16"
+        >
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-dark text-brand-green">
+            <Building2 size={24} />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-navy-dark mb-2">
+              Estrutura da Empresa
+            </h3>
+            <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+              Desde 2010, a SV Topografia & Projetos conta com equipamentos RTK,
+              drones, estações totais e equipe multidisciplinar para entregar
+              soluções completas — do levantamento de campo ao projeto
+              executivo e geoprocessamento.
+            </p>
+          </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
           {cards.map((card, i) => (
@@ -66,7 +140,7 @@ export function About() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-8">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan to-petrol text-white">
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-green to-petrol text-white">
               <Heart size={24} />
             </div>
             <h3 className="text-2xl font-bold text-navy-dark">Nossos Valores</h3>
@@ -82,8 +156,8 @@ export function About() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="relative overflow-hidden rounded-2xl bg-navy-dark p-6 text-white group hover:bg-petrol transition-colors duration-500"
               >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-cyan/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan/20 transition-colors" />
-                <h4 className="text-lg font-bold text-cyan mb-2 relative">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-brand-green/20 transition-colors" />
+                <h4 className="text-lg font-bold text-brand-green mb-2 relative">
                   {value.title}
                 </h4>
                 <p className="text-white/70 text-sm leading-relaxed relative">

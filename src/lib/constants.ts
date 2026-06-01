@@ -97,6 +97,8 @@ export const SV_LOTES = {
     site: "https://www.svlotes.com.br",
     login: "https://www.svlotes.com.br/login",
   },
+  printCaption:
+    "Sistema utilizado para gestão de loteamentos, contratos, vendas e controle financeiro.",
 } as const;
 
 export const ABOUT = {
@@ -210,59 +212,39 @@ export const PORTFOLIO_CATEGORIES = [
 export const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: "Loteamento Residencial Horizonte",
-    category: "loteamentos" as const,
-    image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+    title: "Aerolevantamento com Drone RTK",
+    category: "drones" as const,
+    image: "/images/portfolio/01.jpg",
   },
   {
     id: 2,
-    title: "Duplicação Rodovia BR-050",
-    category: "rodovias" as const,
-    image:
-      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
+    title: "Levantamento Topográfico",
+    category: "obras" as const,
+    image: "/images/portfolio/02.jpg",
   },
   {
     id: 3,
-    title: "Aerolevantamento Industrial",
-    category: "drones" as const,
-    image:
-      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&q=80",
+    title: "Infraestrutura Urbana",
+    category: "obras" as const,
+    image: "/images/portfolio/03.jpg",
   },
   {
     id: 4,
-    title: "Terraplenagem Obra Comercial",
+    title: "Terraplenagem",
     category: "obras" as const,
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+    image: "/images/portfolio/04.jpg",
   },
   {
     id: 5,
-    title: "Condomínio Reserva Verde",
+    title: "Projeto de Loteamento",
     category: "loteamentos" as const,
-    image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
+    image: "/images/portfolio/05.jpeg",
   },
   {
     id: 6,
-    title: "Monitoramento com Drone — Barragem",
-    category: "drones" as const,
-    image:
-      "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&q=80",
-  },
-  {
-    id: 7,
-    title: "Recapeamento Via Municipal",
-    category: "rodovias" as const,
-    image:
-      "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
-  },
-  {
-    id: 8,
-    title: "Infraestrutura Logística",
+    title: "Georreferenciamento",
     category: "obras" as const,
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    image: "/images/portfolio/06.png",
   },
 ] as const;
 
