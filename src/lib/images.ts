@@ -18,6 +18,6 @@ export const IMAGES = {
     gnssRtk: "/images/equipment/03-gnss-rtk.png",
     topcon: "/images/equipment/04-estacao-total-topcon.png",
     civil3d: "/images/equipment/05-civil-3d-geoprocessamento.jpg",
-    estruturaOperacional: "/images/equipment/06-estrutura-operacional.jpg",
+    veiculo: "/images/equipment/06-veiculo-operacional.png",
   },
 } as const;

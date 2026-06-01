@@ -302,7 +302,7 @@ export const TECHNOLOGY = {
       title: "Estrutura Operacional Própria",
       description:
         "Equipe técnica especializada, veículos próprios, equipamentos RTK, drones e estrutura completa para execução de levantamentos, georreferenciamento, aerolevantamentos e projetos em toda a região.",
-      image: "/images/equipment/06-estrutura-operacional.jpg",
+      image: "/images/equipment/06-veiculo-operacional.png",
       icon: "Truck",
     },
   ],
