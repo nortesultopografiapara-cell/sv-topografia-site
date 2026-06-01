@@ -25,8 +25,8 @@ const heroCards = [
   },
   {
     src: IMAGES.hero.infraestrutura,
-    alt: "Infraestrutura e engenharia",
-    label: "Infraestrutura",
+    alt: "Aerolevantamento com drone RTK",
+    label: "Aerolevantamento",
     position: "infra" as const,
   },
 ];
@@ -104,7 +104,7 @@ export function HeroVisual() {
         </span>
       </motion.div>
 
-      {/* Infraestrutura */}
+      {/* Aerolevantamento */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

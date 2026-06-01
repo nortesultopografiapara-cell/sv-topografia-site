@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { Logo } from "@/components/layout/Logo";
 import { HeroVisual } from "@/components/hero/HeroVisual";
 import { Button } from "@/components/ui/Button";
 import { HERO, getWhatsAppUrl } from "@/lib/constants";
@@ -57,18 +56,10 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Conteúdo */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <Logo size="lg" priority className="mb-8" />
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.7 }}
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-5xl font-bold text-white leading-[1.12] tracking-tight uppercase"
             >
               Topografia, Engenharia e Geotecnologia de{" "}
@@ -78,7 +69,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
               className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed font-medium"
             >
               {HERO.subtitle}
@@ -87,7 +78,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
               className="mt-4 text-base text-white/55 leading-relaxed max-w-xl"
             >
               {HERO.institutional}
@@ -96,7 +87,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-8 flex flex-col sm:flex-row gap-4"
             >
               <Button href="#contato" variant="brand" size="lg">
@@ -117,7 +108,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
               className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-8"
             >
               {HERO.stats.map((stat) => (
