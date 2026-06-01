@@ -2,6 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Experience } from "@/components/sections/Experience";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
+import { Technology } from "@/components/sections/Technology";
 import { SvLotes } from "@/components/sections/SvLotes";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Contact } from "@/components/sections/Contact";
@@ -46,6 +47,7 @@ export default function Home() {
       <Experience />
       <About />
       <Services />
+      <Technology />
       <SvLotes />
       <Portfolio />
       <Contact />

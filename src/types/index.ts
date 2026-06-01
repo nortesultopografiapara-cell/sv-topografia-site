@@ -17,6 +17,14 @@ export type ServiceIcon =
   | "FileCheck"
   | "Layers";
 
+export type EquipmentIcon =
+  | "ScanLine"
+  | "Plane"
+  | "Satellite"
+  | "Crosshair"
+  | "Monitor"
+  | "Truck";
+
 export interface ContactFormData {
   name: string;
   email: string;

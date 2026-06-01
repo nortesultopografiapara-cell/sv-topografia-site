@@ -251,6 +251,71 @@ export const SERVICES = [
   },
 ] as const;
 
+export const TECHNOLOGY = {
+  label: "Tecnologia",
+  title: "Nossa Tecnologia e Equipamentos",
+  description:
+    "Equipamentos de última geração para garantir precisão, produtividade e confiabilidade em todos os projetos.",
+  items: [
+    {
+      id: "matrice-350-rtk",
+      title: "DJI Matrice 350 RTK + LiDAR",
+      description:
+        "Aerolevantamentos de alta precisão, geração de nuvem de pontos, modelos digitais de terreno, inspeções e levantamentos de grandes áreas.",
+      image: "/images/equipment/01-matrice-350-rtk.png",
+      icon: "ScanLine",
+    },
+    {
+      id: "phantom-4-pro-rtk",
+      title: "DJI Phantom 4 Pro RTK",
+      description:
+        "Captura de imagens aéreas georreferenciadas para ortomosaicos, monitoramento de obras e levantamentos topográficos.",
+      image: "/images/equipment/02-phantom-4-pro-rtk.png",
+      icon: "Plane",
+    },
+    {
+      id: "gnss-rtk",
+      title: "GNSS RTK",
+      description:
+        "Levantamentos georreferenciados, locações, cadastro técnico, georreferenciamento rural e controle de obras.",
+      image: "/images/equipment/03-gnss-rtk.png",
+      icon: "Satellite",
+    },
+    {
+      id: "estacao-total-topcon",
+      title: "Estação Total Topcon",
+      description:
+        "Equipamento de alta precisão utilizado para levantamentos planialtimétricos, locação e acompanhamento de obras.",
+      image: "/images/equipment/04-estacao-total-topcon.png",
+      icon: "Crosshair",
+    },
+    {
+      id: "civil-3d-geoprocessamento",
+      title: "Civil 3D e Geoprocessamento",
+      description:
+        "Desenvolvimento de projetos, modelagem de superfícies, cálculos volumétricos, loteamentos e infraestrutura.",
+      image: "/images/equipment/05-civil-3d-geoprocessamento.jpg",
+      icon: "Monitor",
+    },
+    {
+      id: "estrutura-campo",
+      title: "Estrutura Própria de Campo",
+      description:
+        "Equipe equipada para atender obras, loteamentos, georreferenciamento e aerolevantamentos em toda a região.",
+      image: "/images/equipment/06-veiculo-operacional.png",
+      icon: "Truck",
+    },
+  ],
+  badges: [
+    "Tecnologia RTK",
+    "Aerolevantamento",
+    "LiDAR",
+    "Georreferenciamento",
+    "Topografia de Precisão",
+    "Processamento e Projetos",
+  ],
+} as const;
+
 export const PORTFOLIO_CATEGORIES = [
   { id: "todos", label: "Todos" },
   { id: "topografia", label: "Topografia" },
