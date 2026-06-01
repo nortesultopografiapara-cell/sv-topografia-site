@@ -1,27 +1,51 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { PORTFOLIO_CATEGORIES, PORTFOLIO_ITEMS } from "@/lib/constants";
+import { Button } from "@/components/ui/Button";
+import {
+  PORTFOLIO_CATEGORIES,
+  PORTFOLIO_ITEMS,
+  getWhatsAppUrl,
+} from "@/lib/constants";
 import { cn } from "@/lib/utils";
+
+type PortfolioItem = (typeof PORTFOLIO_ITEMS)[number];
 
 export function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<string>("todos");
+  const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
   const usedCategories = new Set(PORTFOLIO_ITEMS.map((item) => item.category));
 
   const visibleCategories = PORTFOLIO_CATEGORIES.filter(
     (cat) =>
       cat.id === "todos" ||
-      usedCategories.has(cat.id as (typeof PORTFOLIO_ITEMS)[number]["category"])
+      usedCategories.has(cat.id as PortfolioItem["category"])
   );
 
   const filteredItems =
     activeCategory === "todos"
       ? PORTFOLIO_ITEMS
       : PORTFOLIO_ITEMS.filter((item) => item.category === activeCategory);
+
+  useEffect(() => {
+    document.body.style.overflow = selectedItem ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedItem]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedItem(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
     <section id="portfolio" className="py-20 md:py-28 bg-navy-dark">
@@ -33,14 +57,14 @@ export function Portfolio() {
           light
         />
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
           {visibleCategories.map((cat) => (
             <button
               key={cat.id}
               type="button"
               onClick={() => setActiveCategory(cat.id)}
               className={cn(
-                "px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                "px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300",
                 activeCategory === cat.id
                   ? "bg-brand-green text-navy-dark shadow-lg shadow-brand-green/25"
                   : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
@@ -64,7 +88,16 @@ export function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer"
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedItem(item)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedItem(item);
+                  }
+                }}
+                className="group relative aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan"
               >
                 <Image
                   src={item.image}
@@ -91,6 +124,82 @@ export function Portfolio() {
           </AnimatePresence>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="portfolio-modal-title"
+          >
+            <button
+              type="button"
+              className="absolute inset-0 bg-navy-dark/90 backdrop-blur-sm"
+              onClick={() => setSelectedItem(null)}
+              aria-label="Fechar"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl bg-navy-dark border border-white/10 shadow-2xl"
+            >
+              <button
+                type="button"
+                onClick={() => setSelectedItem(null)}
+                className="absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-navy-dark/80 border border-white/10 text-white hover:bg-white/10 transition-colors"
+                aria-label="Fechar modal"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="relative aspect-[16/10] w-full bg-navy-deep">
+                <Image
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 896px) 100vw, 896px"
+                  priority
+                />
+              </div>
+
+              <div className="p-6 md:p-8">
+                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand-green mb-2">
+                  {selectedItem.categoryLabel}
+                </span>
+                <h3
+                  id="portfolio-modal-title"
+                  className="text-2xl md:text-3xl font-bold text-white leading-tight"
+                >
+                  {selectedItem.title}
+                </h3>
+                <p className="mt-4 text-white/75 leading-relaxed">
+                  {selectedItem.description}
+                </p>
+                <div className="mt-8">
+                  <Button
+                    href={getWhatsAppUrl(
+                      `Olá! Vi no portfólio o projeto "${selectedItem.title}" e gostaria de solicitar um orçamento semelhante.`
+                    )}
+                    variant="brand"
+                    size="lg"
+                    external
+                  >
+                    Solicitar orçamento semelhante
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

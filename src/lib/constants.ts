@@ -319,10 +319,14 @@ export const TECHNOLOGY = {
 export const PORTFOLIO_CATEGORIES = [
   { id: "todos", label: "Todos" },
   { id: "topografia", label: "Topografia" },
-  { id: "obras", label: "Obras Executadas" },
   { id: "georreferenciamento", label: "Georreferenciamento" },
-  { id: "loteamentos", label: "Loteamentos" },
+  { id: "aerolevantamento", label: "Aerolevantamento" },
   { id: "lidar", label: "LiDAR" },
+  { id: "loteamentos", label: "Loteamentos" },
+  { id: "infraestrutura", label: "Infraestrutura" },
+  { id: "rodovias", label: "Rodovias" },
+  { id: "geoprocessamento", label: "Geoprocessamento" },
+  { id: "drones", label: "Drones" },
 ] as const;
 
 export const PORTFOLIO_ITEMS = [
@@ -332,17 +336,17 @@ export const PORTFOLIO_ITEMS = [
     category: "topografia" as const,
     categoryLabel: "Topografia",
     description:
-      "Levantamentos planialtimétricos utilizando GNSS RTK e estação total.",
-    image: "/images/portfolio/01.jpg",
+      "Levantamentos planialtimétricos com GNSS RTK, estação total e apoio técnico em campo.",
+    image: "/images/portfolio/01-levantamento-topografico.jpg",
   },
   {
     id: 2,
     title: "Terraplenagem e Infraestrutura",
-    category: "obras" as const,
-    categoryLabel: "Obras Executadas",
+    category: "infraestrutura" as const,
+    categoryLabel: "Infraestrutura",
     description:
-      "Controle topográfico e acompanhamento de obras de terraplenagem e infraestrutura.",
-    image: "/images/portfolio/02.jpg",
+      "Controle topográfico e acompanhamento técnico de obras de terraplenagem e infraestrutura.",
+    image: "/images/portfolio/02-terraplenagem-infraestrutura.jpg",
   },
   {
     id: 3,
@@ -350,26 +354,89 @@ export const PORTFOLIO_ITEMS = [
     category: "georreferenciamento" as const,
     categoryLabel: "Georreferenciamento",
     description:
-      "Levantamentos georreferenciados para imóveis rurais e urbanos.",
-    image: "/images/portfolio/03.jpg",
+      "Levantamentos georreferenciados para imóveis rurais e urbanos, com precisão e documentação técnica.",
+    image: "/images/portfolio/03-georreferenciamento.jpg",
   },
   {
     id: 4,
-    title: "Terraplenagem",
-    category: "obras" as const,
-    categoryLabel: "Obras Executadas",
+    title: "Locação e Controle de Obras",
+    category: "topografia" as const,
+    categoryLabel: "Topografia",
     description:
-      "Acompanhamento topográfico de obras e movimentação de terra.",
-    image: "/images/portfolio/04.jpg",
+      "Locação de pontos, eixos, greides e acompanhamento geométrico de obras civis.",
+    image: "/images/portfolio/04-locacao-controle-obras.jpg",
   },
   {
-    id: 6,
-    title: "LiDAR e Nuvem de Pontos",
+    id: 5,
+    title: "LiDAR e Modelagem 3D",
     category: "lidar" as const,
     categoryLabel: "LiDAR",
     description:
-      "Modelagem tridimensional de terrenos, estruturas e áreas de mineração.",
-    image: "/images/portfolio/06.png",
+      "Geração de nuvem de pontos, modelos digitais de terreno e análises altimétricas avançadas.",
+    image: "/images/portfolio/05-lidar-modelagem-3d.png",
+  },
+  {
+    id: 6,
+    title: "Vila das Chácaras",
+    category: "loteamentos" as const,
+    categoryLabel: "Loteamentos",
+    description:
+      "Projeto de loteamento e planejamento urbanístico com áreas, acessos e implantação técnica.",
+    image: "/images/portfolio/06-vila-das-chacaras.png",
+  },
+  {
+    id: 7,
+    title: "Parque das Nações",
+    category: "loteamentos" as const,
+    categoryLabel: "Loteamentos",
+    description:
+      "Projeto de loteamento com organização de quadras, lotes, vias e infraestrutura urbana.",
+    image: "/images/portfolio/07-parque-das-nacoes.jpg",
+  },
+  {
+    id: 8,
+    title: "Viaduto de Parauapebas",
+    category: "infraestrutura" as const,
+    categoryLabel: "Infraestrutura",
+    description:
+      "Apoio técnico e levantamento topográfico para estudo e intervenção em infraestrutura urbana.",
+    image: "/images/portfolio/08-viaduto-parauapebas.jpg",
+  },
+  {
+    id: 9,
+    title: "Projeto Rodoviário",
+    category: "rodovias" as const,
+    categoryLabel: "Rodovias",
+    description:
+      "Levantamento, acompanhamento e apoio técnico para projetos rodoviários e infraestrutura viária.",
+    image: "/images/portfolio/09-projeto-rodoviario.jpg",
+  },
+  {
+    id: 10,
+    title: "Aerolevantamento com Drone",
+    category: "aerolevantamento" as const,
+    categoryLabel: "Aerolevantamento",
+    description:
+      "Captura de imagens aéreas, ortomosaicos e produtos cartográficos para planejamento e medição.",
+    image: "/images/portfolio/10-aerolevantamento-drone.png",
+  },
+  {
+    id: 11,
+    title: "Mapeamento e Geoprocessamento",
+    category: "geoprocessamento" as const,
+    categoryLabel: "Geoprocessamento",
+    description:
+      "Processamento de dados geoespaciais, mapas temáticos, curvas de nível e análises territoriais.",
+    image: "/images/portfolio/11-geoprocessamento.png",
+  },
+  {
+    id: 12,
+    title: "Monitoramento com Drone RTK",
+    category: "drones" as const,
+    categoryLabel: "Drones",
+    description:
+      "Monitoramento de obras, áreas rurais, loteamentos e empreendimentos com imagens aéreas de alta precisão.",
+    image: "/images/portfolio/12-monitoramento-drone-rtk.jpg",
   },
 ] as const;
 

@@ -1,9 +1,13 @@
 export type PortfolioCategory =
   | "topografia"
-  | "obras"
   | "georreferenciamento"
+  | "aerolevantamento"
+  | "lidar"
   | "loteamentos"
-  | "lidar";
+  | "infraestrutura"
+  | "rodovias"
+  | "geoprocessamento"
+  | "drones";
 
 export type ServiceIcon =
   | "Map"
