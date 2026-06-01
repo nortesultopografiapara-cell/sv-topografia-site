@@ -78,27 +78,77 @@ export const EXPERIENCE = {
 } as const;
 
 export const SV_LOTES = {
-  title: "SV LOTES — Gestão Inteligente para Loteadoras",
-  subtitle:
-    "Venda lotes pelo mapa, gere contratos, parcelas, carnês, recibos e controle financeiro em uma única plataforma.",
+  title: "SV LOTES",
+  subtitle: "Gestão Inteligente para Loteadoras e Imobiliárias",
   description:
-    "O SV LOTES é uma plataforma desenvolvida pela SV Topografia & Projetos para modernizar a gestão de loteamentos, imobiliárias e incorporadoras. O sistema integra mapa GIS, controle de lotes, vendas, contratos, financeiro, clientes e relatórios em tempo real.",
-  features: [
-    "Mapa GIS interativo",
-    "Controle de lotes disponíveis, reservados, vendidos e quitados",
-    "Geração automática de contratos",
-    "Controle financeiro de parcelas",
-    "Recibos e carnês",
-    "Cadastro de clientes e corretores",
-    "Dashboard gerencial",
-    "Relatórios de vendas e inadimplência",
+    "O SV LOTES é uma plataforma desenvolvida pela SV Topografia & Projetos para modernizar a gestão de loteamentos e empreendimentos imobiliários.",
+  descriptionExtended:
+    "O sistema integra mapa GIS, clientes, contratos, vendas, financeiro, relatórios, recebimentos e controle operacional em uma única plataforma.",
+  highlight:
+    "Sistema atualmente utilizado pela Meneses Imobiliária para gestão completa de loteamentos, contratos, clientes e controle financeiro.",
+  mainImage: {
+    src: "/images/svlotes/01.png",
+    alt: "Mapa GIS Interativo — SV LOTES",
+    label: "Mapa GIS Interativo",
+  },
+  badges: [
+    "Mapa GIS Integrado",
+    "Gestão de Contratos",
+    "Controle Financeiro",
+    "Cadastro de Clientes",
+    "Controle de Vendas",
+    "Relatórios Gerenciais",
+    "Gestão de Recebimentos",
+    "Multiempresa",
+  ],
+  gallery: [
+    {
+      id: 2,
+      src: "/images/svlotes/02.png",
+      title: "Dashboard Gerencial",
+      description:
+        "Acompanhamento em tempo real de vendas, estoque, recebimentos, indicadores financeiros e desempenho do empreendimento.",
+    },
+    {
+      id: 3,
+      src: "/images/svlotes/03.png",
+      title: "Gestão de Contratos",
+      description:
+        "Controle completo de contratos, documentos, clientes, histórico de negociações e processos comerciais.",
+    },
+    {
+      id: 4,
+      src: "/images/svlotes/04.png",
+      title: "Controle Financeiro",
+      description:
+        "Gestão de parcelas, recebimentos, inadimplência, fluxo de caixa e relatórios financeiros.",
+    },
+    {
+      id: 5,
+      src: "/images/svlotes/05.png",
+      title: "Central Administrativa",
+      description:
+        "Painel operacional para gerenciamento integrado de clientes, contratos, vendas e movimentações do sistema.",
+    },
+    {
+      id: 6,
+      src: "/images/svlotes/06.png",
+      title: "Consulta Inteligente de Lotes",
+      description:
+        "Visualização detalhada das informações do lote, incluindo área, dimensões, confrontações, status comercial e valores.",
+    },
+    {
+      id: 7,
+      src: "/images/svlotes/07.png",
+      title: "Venda Assistida",
+      description:
+        "Processo simplificado de cadastro de clientes e geração automática de vendas, contratos e parcelas financeiras.",
+    },
   ],
   links: {
     site: "https://www.svlotes.com.br",
     login: "https://www.svlotes.com.br/login",
   },
-  printCaption:
-    "Sistema utilizado atualmente pela Meneses Imobiliária para gestão de loteamentos, contratos, clientes, vendas, recebimentos e controle financeiro.",
 } as const;
 
 export const ABOUT = {

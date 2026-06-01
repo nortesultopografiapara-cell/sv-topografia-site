@@ -10,6 +10,6 @@ export const IMAGES = {
     escritorio: "/images/about/escritorio.png",
   },
   svlotes: {
-    print: "/images/svlotes/print.png",
+    main: "/images/svlotes/01.png",
   },
 } as const;
