@@ -10,15 +10,15 @@ import { IMAGES } from "@/lib/images";
 const institutionalPhotos = [
   {
     src: IMAGES.about.equipe,
-    title: "Nossa Equipe",
+    title: "Nossa Sede",
     description:
-      "Profissionais qualificados em topografia, geodésia e engenharia, prontos para atender projetos em todo o Brasil.",
+      "Estrutura moderna localizada em Parauapebas-PA, preparada para atender projetos de topografia, georreferenciamento, loteamentos e engenharia.",
   },
   {
     src: IMAGES.about.escritorio,
-    title: "Nosso Escritório",
+    title: "Equipe Técnica",
     description:
-      "Estrutura completa em Parauapebas-PA, com tecnologia de ponta para levantamentos, processamento e projetos.",
+      "Profissionais especializados em topografia, geodésia, geoprocessamento e engenharia, atuando em projetos em todo o Brasil.",
   },
 ];
 

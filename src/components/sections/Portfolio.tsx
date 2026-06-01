@@ -10,6 +10,14 @@ import { cn } from "@/lib/utils";
 export function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<string>("todos");
 
+  const usedCategories = new Set(PORTFOLIO_ITEMS.map((item) => item.category));
+
+  const visibleCategories = PORTFOLIO_CATEGORIES.filter(
+    (cat) =>
+      cat.id === "todos" ||
+      usedCategories.has(cat.id as (typeof PORTFOLIO_ITEMS)[number]["category"])
+  );
+
   const filteredItems =
     activeCategory === "todos"
       ? PORTFOLIO_ITEMS
@@ -26,7 +34,7 @@ export function Portfolio() {
         />
 
         <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {PORTFOLIO_CATEGORIES.map((cat) => (
+          {visibleCategories.map((cat) => (
             <button
               key={cat.id}
               type="button"
@@ -34,7 +42,7 @@ export function Portfolio() {
               className={cn(
                 "px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
                 activeCategory === cat.id
-                  ? "bg-cyan text-navy-dark shadow-lg shadow-cyan/25"
+                  ? "bg-brand-green text-navy-dark shadow-lg shadow-brand-green/25"
                   : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white"
               )}
             >
@@ -68,15 +76,15 @@ export function Portfolio() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/90 via-navy-dark/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-cyan mb-1">
-                    {
-                      PORTFOLIO_CATEGORIES.find((c) => c.id === item.category)
-                        ?.label
-                    }
+                  <span className="inline-block text-xs font-semibold uppercase tracking-wider text-brand-green mb-1">
+                    {item.categoryLabel}
                   </span>
                   <h3 className="text-white font-bold text-lg leading-tight">
                     {item.title}
                   </h3>
+                  <p className="text-white/70 text-sm leading-snug mt-1.5 line-clamp-2">
+                    {item.description}
+                  </p>
                 </div>
               </motion.article>
             ))}

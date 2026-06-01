@@ -1,4 +1,9 @@
-export type PortfolioCategory = "obras" | "loteamentos" | "rodovias" | "drones";
+export type PortfolioCategory =
+  | "topografia"
+  | "obras"
+  | "georreferenciamento"
+  | "loteamentos"
+  | "lidar";
 
 export type ServiceIcon =
   | "Map"

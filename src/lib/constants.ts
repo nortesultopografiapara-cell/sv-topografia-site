@@ -98,7 +98,7 @@ export const SV_LOTES = {
     login: "https://www.svlotes.com.br/login",
   },
   printCaption:
-    "Sistema utilizado para gestão de loteamentos, contratos, vendas e controle financeiro.",
+    "Sistema utilizado atualmente pela Meneses Imobiliária para gestão de loteamentos, contratos, clientes, vendas, recebimentos e controle financeiro.",
 } as const;
 
 export const ABOUT = {
@@ -203,47 +203,57 @@ export const SERVICES = [
 
 export const PORTFOLIO_CATEGORIES = [
   { id: "todos", label: "Todos" },
+  { id: "topografia", label: "Topografia" },
   { id: "obras", label: "Obras Executadas" },
+  { id: "georreferenciamento", label: "Georreferenciamento" },
   { id: "loteamentos", label: "Loteamentos" },
-  { id: "rodovias", label: "Rodovias" },
-  { id: "drones", label: "Drones" },
+  { id: "lidar", label: "LiDAR" },
 ] as const;
 
 export const PORTFOLIO_ITEMS = [
   {
     id: 1,
-    title: "Aerolevantamento com Drone RTK",
-    category: "drones" as const,
+    title: "Levantamento Topográfico",
+    category: "topografia" as const,
+    categoryLabel: "Topografia",
+    description:
+      "Levantamentos planialtimétricos utilizando GNSS RTK e estação total.",
     image: "/images/portfolio/01.jpg",
   },
   {
     id: 2,
-    title: "Levantamento Topográfico",
+    title: "Terraplenagem e Infraestrutura",
     category: "obras" as const,
+    categoryLabel: "Obras Executadas",
+    description:
+      "Controle topográfico e acompanhamento de obras de terraplenagem e infraestrutura.",
     image: "/images/portfolio/02.jpg",
   },
   {
     id: 3,
-    title: "Infraestrutura Urbana",
-    category: "obras" as const,
+    title: "Georreferenciamento de Imóveis",
+    category: "georreferenciamento" as const,
+    categoryLabel: "Georreferenciamento",
+    description:
+      "Levantamentos georreferenciados para imóveis rurais e urbanos.",
     image: "/images/portfolio/03.jpg",
   },
   {
     id: 4,
     title: "Terraplenagem",
     category: "obras" as const,
+    categoryLabel: "Obras Executadas",
+    description:
+      "Acompanhamento topográfico de obras e movimentação de terra.",
     image: "/images/portfolio/04.jpg",
   },
   {
-    id: 5,
-    title: "Projeto de Loteamento",
-    category: "loteamentos" as const,
-    image: "/images/portfolio/05.jpeg",
-  },
-  {
     id: 6,
-    title: "Georreferenciamento",
-    category: "obras" as const,
+    title: "LiDAR e Nuvem de Pontos",
+    category: "lidar" as const,
+    categoryLabel: "LiDAR",
+    description:
+      "Modelagem tridimensional de terrenos, estruturas e áreas de mineração.",
     image: "/images/portfolio/06.png",
   },
 ] as const;
