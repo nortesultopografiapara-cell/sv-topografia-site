@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SV Topografia & Projetos LTDA — Site Institucional
 
-## Getting Started
+Site institucional da **SV Topografia & Projetos LTDA**, desenvolvido com Next.js 15, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## Tecnologias
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Next.js 15](https://nextjs.org/) (App Router)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) — animações
+- [Lucide React](https://lucide.dev/) — ícones
+
+## Estrutura
+
+```
+src/
+├── app/              # Rotas e layout (App Router)
+│   ├── blog/         # Página placeholder para futuro blog
+│   ├── layout.tsx    # Layout global + SEO
+│   ├── page.tsx      # Página principal (single-page)
+│   ├── sitemap.ts
+│   └── robots.ts
+├── components/
+│   ├── layout/       # Header, Footer, Logo, WhatsApp
+│   ├── sections/     # Hero, Sobre, Serviços, Portfólio, Contato
+│   └── ui/           # Button, SectionTitle, AnimatedSection
+├── lib/              # Constantes e utilitários
+└── types/            # Tipos TypeScript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Seções do site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Home** — Banner com drone/topografia, logo, CTAs WhatsApp e orçamento
+2. **Sobre** — História, missão, visão e valores
+3. **Serviços** — 10 serviços especializados
+4. **Portfólio** — Galeria filtrável por categoria
+5. **Contato** — Formulário, WhatsApp, e-mail e Google Maps
+6. **Rodapé** — Logo, links, redes sociais e direitos reservados
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Identidade visual
 
-## Learn More
+| Cor            | Hex       |
+|----------------|-----------|
+| Azul escuro    | `#0A1628` |
+| Azul petróleo  | `#1B3A4B` |
+| Ciano          | `#00D4FF` |
+| Branco         | `#FFFFFF` |
 
-To learn more about Next.js, take a look at the following resources:
+## Como executar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Instalar dependências
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Desenvolvimento
+npm run dev
 
-## Deploy on Vercel
+# Build de produção
+npm run build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Servidor de produção
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acesse [http://localhost:3000](http://localhost:3000).
+
+## Personalização
+
+Edite os dados da empresa em `src/lib/constants.ts`:
+
+- Telefone e WhatsApp
+- E-mail e endereço
+- URL do Google Maps
+- Links das redes sociais
+- Textos institucionais
+
+Configure a URL do site em `.env.local`:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://seudominio.com.br
+```
+
+## Blog (futuro)
+
+A rota `/blog` está preparada como placeholder. Para integrar um CMS ou MDX:
+
+1. Adicione posts em `src/app/blog/[slug]/page.tsx`
+2. Ou integre Sanity, Contentful, Strapi, etc.
+
+## Deploy
+
+Recomendado: [Vercel](https://vercel.com) ou qualquer host compatível com Node.js.
+
+```bash
+npm run build
+```
+
+## Licença
+
+Projeto proprietário — SV Topografia & Projetos LTDA. Todos os direitos reservados.
