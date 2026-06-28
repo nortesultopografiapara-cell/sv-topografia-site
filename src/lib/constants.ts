@@ -440,6 +440,127 @@ export const PORTFOLIO_ITEMS = [
   },
 ] as const;
 
+export const WORKS_GALLERY = {
+  label: "Execução em Campo",
+  title: "Galeria de Obras",
+  description:
+    "Acompanhamento real de execução, terraplanagem, abertura de vias e apoio topográfico em campo.",
+  items: [
+    {
+      id: 1,
+      title: "Terraplanagem e Abertura de Vias",
+      description:
+        "Acompanhamento técnico em campo com marcação topográfica e controle de nivelamento.",
+      src: "/images/gallery/obras/obra-terraplanagem-01.jpg",
+      alt: "Equipe técnica acompanhando terraplanagem com motoniveladora e estacas de marcação em obra de abertura de via",
+    },
+    {
+      id: 2,
+      title: "Logística e Estrutura Operacional",
+      description:
+        "Caminhonete SV Topografia transportando materiais em canteiro de obras.",
+      src: "/images/gallery/obras/obra-caminhonete-sv-01.jpg",
+      alt: "Caminhonete branca da SV Topografia e Projetos com reboque carregado em canteiro de obras",
+    },
+    {
+      id: 3,
+      title: "Nivelamento com Motoniveladora",
+      description:
+        "Execução de terraplanagem com máquinas pesadas e equipe de campo.",
+      src: "/images/gallery/obras/obra-maquinas-01.jpg",
+      alt: "Motoniveladora amarela nivelando solo avermelhado com equipe técnica acompanhando a obra",
+    },
+    {
+      id: 4,
+      title: "Controle Topográfico em Obra",
+      description:
+        "Locação e acompanhamento geométrico durante abertura de ruas e vias.",
+      src: "/images/gallery/obras/obra-terraplanagem-02.jpg",
+      alt: "Obra de terraplanagem com motoniveladora e equipe de topografia em campo sob céu azul",
+    },
+    {
+      id: 5,
+      title: "Execução de Terraplanagem",
+      description:
+        "Marcação de pontos e acompanhamento de nivelamento em área de implantação.",
+      src: "/images/gallery/obras/obra-terraplanagem-03.jpg",
+      alt: "Profissional em campo com estacas topográficas durante execução de terraplanagem",
+    },
+    {
+      id: 6,
+      title: "Equipe Técnica em Campo",
+      description:
+        "Apoio topográfico direto na execução de obras de infraestrutura.",
+      src: "/images/gallery/obras/obra-equipe-campo-01.jpg",
+      alt: "Técnico da SV Topografia caminhando em via em construção com motoniveladora ao fundo",
+    },
+    {
+      id: 7,
+      title: "Acompanhamento de Maquinário",
+      description:
+        "Supervisão técnica de obras com controle planialtimétrico em tempo real.",
+      src: "/images/gallery/obras/obra-terraplanagem-04.jpg",
+      alt: "Equipe técnica supervisionando motoniveladora em obra de abertura de estrada",
+    },
+    {
+      id: 8,
+      title: "Abertura de Estradas",
+      description:
+        "Execução de vias com apoio topográfico e maquinário de compactação.",
+      src: "/images/gallery/obras/obra-estrada-01.jpg",
+      alt: "Via de terra em construção com caminhonete e rolo compactador ao fundo",
+    },
+    {
+      id: 9,
+      title: "Preparação de Base Viária",
+      description:
+        "Operação com trator e grade de discos para preparação do solo.",
+      src: "/images/gallery/obras/obra-maquinas-02.jpg",
+      alt: "Trator com grade de discos e motoniveladora em obra de preparação de base viária",
+    },
+    {
+      id: 10,
+      title: "Terraplanagem em Execução",
+      description:
+        "Nivelamento de solo com motoniveladora em projeto de infraestrutura.",
+      src: "/images/gallery/obras/obra-maquinas-03.jpg",
+      alt: "Motoniveladora Caterpillar operando em terraplanagem de estrada de terra avermelhada",
+    },
+    {
+      id: 11,
+      title: "Implantação de Vias",
+      description:
+        "Visão geral da execução com maquinário pesado e veículos de apoio.",
+      src: "/images/gallery/obras/obra-estrada-02.jpg",
+      alt: "Vista ampla de obra de estrada com motoniveladora, trator e veículos de apoio",
+    },
+    {
+      id: 12,
+      title: "Apoio Operacional em Obra",
+      description:
+        "Veículo de apoio estacionado em via em processo de terraplanagem.",
+      src: "/images/gallery/obras/obra-caminhonete-sv-02.jpg",
+      alt: "Caminhonete de apoio em via de terra nivelada durante execução de obra",
+    },
+    {
+      id: 13,
+      title: "Nivelamento de Solo",
+      description:
+        "Preparação de terreno para infraestrutura urbana com controle topográfico.",
+      src: "/images/gallery/obras/obra-terraplanagem-05.jpg",
+      alt: "Estrada de terra nivelada com estacas topográficas e galpões ao fundo",
+    },
+    {
+      id: 14,
+      title: "Compactação e Finalização",
+      description:
+        "Operação com trator, tanque de água e aplicação de base em via.",
+      src: "/images/gallery/obras/obra-terraplanagem-06.jpg",
+      alt: "Trator com tanque de água aplicando base de brita em obra de abertura de via",
+    },
+  ],
+} as const;
+
 export function getWhatsAppUrl(message?: string) {
   const text = encodeURIComponent(
     message ?? "Olá! Gostaria de solicitar um orçamento."

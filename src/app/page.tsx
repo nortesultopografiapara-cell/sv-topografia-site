@@ -5,6 +5,7 @@ import { Services } from "@/components/sections/Services";
 import { Technology } from "@/components/sections/Technology";
 import { SvLotes } from "@/components/sections/SvLotes";
 import { Portfolio } from "@/components/sections/Portfolio";
+import { WorksGallery } from "@/components/sections/WorksGallery";
 import { Contact } from "@/components/sections/Contact";
 import { COMPANY } from "@/lib/constants";
 
@@ -50,6 +51,7 @@ export default function Home() {
       <Technology />
       <SvLotes />
       <Portfolio />
+      <WorksGallery />
       <Contact />
     </>
   );
